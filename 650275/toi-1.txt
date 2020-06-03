@@ -1,0 +1,29 @@
+#include <iostream>
+using namespace std;
+
+int main() {
+    int a[3];
+    int b[3];
+
+    for (int i = 0; i < 3; i++) {
+        cin >> a[i];
+        cin >> b[i];
+    }
+
+    int m = 0;
+    int text = 0;
+
+    while (true) {
+        text += 1;
+        if (text % a[0] == b[0]) {
+            if (text % a[1] == b[1]) {
+                if (text % a[2] == b[2]) {
+                    m = text;
+                    break;
+                }
+            }
+        }
+    }
+
+    cout << m;
+}
