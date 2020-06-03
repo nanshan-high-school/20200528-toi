@@ -1,0 +1,47 @@
+#include <iostream>
+using namespace std;
+
+int main() {
+    int number[3];
+    int A[5];
+    int B[5];
+
+    for (int i = 0; i < 3; i++) {
+        cin >> number[i];
+    }
+    for (int i = 0; i < 5; i++) {
+        cin >> A[i];
+    }
+    for (int i = 0; i < 5; i++) {
+        cin >> B[i];
+    }
+
+    int total = 0;
+    bool result = true;
+    for (int i = 0; i < 2; i++) {
+        for (int j = 0; j < 5; j++) {
+            if (number[i] == A[j]) {
+                total += B[j];
+            }
+        }
+    }
+
+    for (int i = 0; i < 5; i++) {
+        if (number[2] == A[i]) {
+            result = false;
+            total -= B[i];
+        }
+    }
+
+    if (result == true) {
+        total *= 2;
+    }
+
+    if (total < 0) {
+        total = 0;
+        cout << total;
+    } else {
+        cout << total;
+    }
+
+}
