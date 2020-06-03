@@ -1,0 +1,46 @@
+#include <iostream>
+using namespace std;
+
+int main() {
+	int luckynum[3];
+	int lottery[5][2];
+	int total = 0;
+
+	for (int i = 0; i < 3; i++) {
+		cin >> luckynum[i];
+	} 
+
+	for (int i = 0; i < 2; i++) {
+		for (int j = 0; j < 5; j++) {
+			cin >> lottery[j][i];
+		} 
+	} 
+
+	for (int i = 0; i < 2; i++) {
+		for (int j = 0; j < 5; j++) {
+			if (luckynum[i] == lottery[j][0]) {
+				total += lottery[j][1];
+			}
+		} 
+	} 
+
+	bool check = true;
+
+	for (int i = 0; i < 5; i++) {
+		if (luckynum[2] == lottery[i][0]) {
+			total -= lottery[i][1];
+
+			check = false;
+		}
+	} 
+	
+	if (check == true) {
+		total *= 2;
+	}
+
+	if (total < 0) {
+		total = 0;
+	}
+
+	cout << total;
+}
